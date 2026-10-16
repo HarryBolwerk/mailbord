@@ -1,0 +1,15 @@
+{
+  "name": "Mailbord offline",
+  "short_name": "Mailbord",
+  "description": "Je Mailbord, ook zonder internet",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eceee9",
+  "theme_color": "#33594a",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
