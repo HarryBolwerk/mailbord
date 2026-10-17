@@ -1,3 +1,10 @@
 {
- "devices": []
+ "devices": [
+  {
+   "id": "3c3806834162c5c6",
+   "name": "Android (Har)",
+   "keyId": "5b1b3d4338cbe562",
+   "wrapped": "geqSod0soHzSE0vDLvcxrScNK3G5jXT75mM2NOlLUUMr0B76Bw19usfH4jkARMfWfBZdc6dG5XyQ8apxqd0mCsNlHDwpMhJcAtrpQq01S7xKshVkELVWkOjW91lneFfMk7LMGkdN/jfzMNPDJzU/Hq/UK1nFAa5JN/cS2P/bb3WaMrCW3IfK7Ao/Z4MPsfjZBB3DWnVBEtLveXS7lVVUi1voOy6hshMkywbXtLHJz/dX/iqEb27UReuK48B11KXjmGRWy3uqn8JZLrd8IGe4LumoZQKoYvjQGxHNb90LwqOTI1xnH9xA+3q1DsHEqwgcYakgLQB7FTr8Rcutz9zhLQ=="
+  }
+ ]
 }
