@@ -74,6 +74,7 @@ const fmtFull = iso => { try { return new Date(iso).toLocaleString('nl-NL', { we
 const tagsOf = c => Array.isArray(c.tags) ? c.tags : [];
 const mailsOf = c => Array.isArray(c.mails) ? c.mails : [];
 const lastDate = c => mailsOf(c).reduce((m, x) => (x.date || '') > m ? x.date : m, c.updated || '');
+const byNewest = (a, b) => (!!a.quiet - !!b.quiet) || lastDate(b).localeCompare(lastDate(a));
 
 /* ---------- load ---------- */
 async function loadIndex() {
@@ -134,13 +135,13 @@ async function loadAllBodies() {
 function render() {
   const q = state.q, feed = $('feed');
   feed.textContent = '';
-  const cards = state.cards.filter(c => cardHits(c, q)).sort((a, b) => lastDate(b).localeCompare(lastDate(a)));
+  const cards = state.cards.filter(c => cardHits(c, q)).sort(byNewest);
   const f = $('filters'); f.textContent = '';
   if (state.tag) { const t = el('button', 'tag on'); t.type = 'button'; t.append(state.tag, el('span', 'x', '×')); t.onclick = () => applyTag(null); f.append(t); }
   if (q || state.tag) f.append(el('span', 'info', cards.length + (cards.length === 1 ? ' kaart' : ' kaarten')));
   if (!cards.length) { feed.append(el('div', 'empty', state.cards.length ? 'Geen kaarten gevonden.' : 'Nog geen mail.')); return; }
   cards.forEach(c => {
-    const card = el('article', 'card'); card.dataset.id = c.id;
+    const card = el('article', 'card' + (c.quiet ? ' quiet' : '')); card.dataset.id = c.id;
     const main = el('button', 'main'); main.type = 'button'; main.setAttribute('aria-expanded', open.has(c.id));
     const l1 = el('div', 'line1'); const t = el('span', 'title'); t.append(highlight(c.title || 'Zonder titel', q));
     l1.append(t, el('span', 'when', fmtShort(lastDate(c)))); main.append(l1);

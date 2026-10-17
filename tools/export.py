@@ -106,7 +106,7 @@ def main():
             if atts:
                 entry['attachments'] = atts
             out_mails.append(entry)
-        card = {k: c.get(k) for k in ('title', 'summary', 'status', 'ref', 'done', 'updated', 'tags') if c.get(k) is not None}
+        card = {k: c.get(k) for k in ('title', 'summary', 'status', 'ref', 'done', 'updated', 'tags', 'quiet') if c.get(k) is not None}
         card['id'] = cid
         card['mails'] = out_mails
         out_cards.append(card)

@@ -2,7 +2,7 @@
 // App shell: served from cache, refreshed in the background.
 // data/index.bin + data/keys.json: network first (short timeout), cache as fallback.
 // data/m/* and data/a/*: content-addressed, so cache first and never refetched.
-const SHELL = 'mb-shell-v1';
+const SHELL = 'mb-shell-v2';
 const DATA = 'mb-data-v1';
 const FONTS = 'mb-fonts-v1';
 const SHELL_FILES = ['./', 'index.html', 'app.js', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png',
